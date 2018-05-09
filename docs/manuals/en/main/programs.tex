@@ -262,7 +262,7 @@ Usage: bls [options] <device-name>
        -D <director>   specify a director name specified in the Storage
                        configuration file for the Key Encryption Key selection
        -d <nn>         set debug level to <nn>
-       -dt             print timestamp in debug output
+       -dt             dont't print timestamp in debug output
        -e <file>       exclude list
        -i <file>       include list
        -j              list jobs
@@ -524,7 +524,7 @@ Usage: bextract <options> <bareos-archive-device-name> <directory-to-store-files
        -D <director>   specify a director name specified in the Storage
                        configuration file for the Key Encryption Key selection
        -d <nn>         set debug level to <nn>
-       -dt             print timestamp in debug output
+       -dt             dont't print timestamp in debug output
        -e <file>       exclude list
        -i <file>       include list
        -p              proceed inspite of I/O errors
@@ -684,7 +684,7 @@ Usage: bscan [options] <Bareos-archive>
        -b bootstrap      specify a bootstrap file
        -c <file>         specify configuration file
        -d <nn>           set debug level to nn
-       -dt               print timestamp in debug output
+       -dt               dont't print timestamp in debug output
        -m                update media info in database
        -D <director>     specify a director name specified in the Storage
                          configuration file for the Key Encryption Key selection
@@ -1002,7 +1002,7 @@ Usage: bcopy [-d debug_level] <input-archive> <output-archive>
        -D <director>   specify a director name specified in the Storage
                        configuration file for the Key Encryption Key selection
        -dnn            set debug level to nn
-       -dt             print timestamp in debug output
+       -dt             dont't print timestamp in debug output
        -i              specify input Volume names (separated by |)
        -o              specify output Volume names (separated by |)
        -p              proceed inspite of I/O errors
@@ -1057,7 +1057,7 @@ Usage: btape <options> <device_name>
        -D <director> specify a director name specified in the Storage
                      configuration file for the Key Encryption Key selection
        -d <nn>       set debug level to nn
-       -dt           print timestamp in debug output
+       -dt           dont't print timestamp in debug output
        -p            proceed inspite of I/O errors
        -s            turn off signals
        -v            be verbose
