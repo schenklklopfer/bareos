@@ -51,7 +51,7 @@ static void usage()
                        "Usage: tray-monitor [options]\n"
                        "        -c <path>   use <path> as configuration file or directory\n"
                        "        -d <nn>     set debug level to <nn>\n"
-                       "        -dt         print timestamp in debug output\n"
+                       "        -dt         don't print timestamp in debug output\n"
                        "        -t          test - read configuration and exit\n"
                        "        -xc         print configuration and exit\n"
                        "        -xs         print configuration file schema in JSON format and exit\n"
@@ -80,7 +80,7 @@ static void ParseCommandLine(int argc, char* argv[], cl_opts& cl)
 
       case 'd':
          if (*optarg == 't') {
-            dbg_timestamp = true;
+            debug_timestamp = false;
          } else {
             debug_level = atoi(optarg);
             if (debug_level <= 0) {

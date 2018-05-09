@@ -120,7 +120,7 @@ PROG_COPYRIGHT
 "        -l          list Directors defined\n"
 "        -c <path>   specify configuration file or directory\n"
 "        -d <nn>     set debug level to <nn>\n"
-"        -dt         print timestamp in debug output\n"
+"        -dt         don't print timestamp in debug output\n"
 "        -n          no conio\n"
 "        -s          no signals\n"
 "        -u <nn>     set command execution timeout to <nn> seconds\n"
@@ -1183,7 +1183,7 @@ int main(int argc, char *argv[])
 
       case 'd':
          if (*optarg == 't') {
-            dbg_timestamp = true;
+            debug_timestamp = false;
          } else {
             debug_level = atoi(optarg);
             if (debug_level <= 0) {

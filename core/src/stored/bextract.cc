@@ -87,7 +87,7 @@ PROG_COPYRIGHT
 "       -D <director>   specify a director name specified in the Storage\n"
 "                       configuration file for the Key Encryption Key selection\n"
 "       -d <nn>         set debug level to <nn>\n"
-"       -dt             print timestamp in debug output\n"
+"       -dt             don't print timestamp in debug output\n"
 "       -e <file>       exclude list\n"
 "       -i <file>       include list\n"
 "       -p              proceed inspite of I/O errors\n"
@@ -142,7 +142,7 @@ int main (int argc, char *argv[])
 
       case 'd':                    /* debug level */
          if (*optarg == 't') {
-            dbg_timestamp = true;
+            debug_timestamp = false;
          } else {
             debug_level = atoi(optarg);
             if (debug_level <= 0) {

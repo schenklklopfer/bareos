@@ -191,7 +191,7 @@ PROG_COPYRIGHT
 "Usage: bareos-dir [options]\n"
 "        -c <path>   use <path> as configuration file or directory\n"
 "        -d <nn>     set debug level to <nn>\n"
-"        -dt         print timestamp in debug output\n"
+"        -dt         don't print timestamp in debug output\n"
 "        -f          run in foreground (for debugging)\n"
 "        -g <group>  run as group <group>\n"
 "        -m          print kaboom output (for debugging)\n"
@@ -252,7 +252,7 @@ int main (int argc, char *argv[])
 
       case 'd':                    /* set debug level */
          if (*optarg == 't') {
-            dbg_timestamp = true;
+            debug_timestamp = false;
          } else {
             debug_level = atoi(optarg);
             if (debug_level <= 0) {

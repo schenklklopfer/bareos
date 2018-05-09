@@ -1221,7 +1221,7 @@ int main (int argc, char *argv[])
          break;
       case 'd':                    /* debug level */
          if (*optarg == 't') {
-            dbg_timestamp = true;
+            debug_timestamp = false;
          } else {
             debug_level = atoi(optarg);
             if (debug_level <= 0) {

@@ -118,7 +118,7 @@ PROG_COPYRIGHT
 "       -b <bootstrap>    specify a bootstrap file\n"
 "       -c <path>         specify a Storage configuration file or directory\n"
 "       -d <nnn>          set debug level to <nnn>\n"
-"       -dt               print timestamp in debug output\n"
+"       -dt               don't print timestamp in debug output\n"
 "       -m                update media info in database\n"
 "       -D <director>     specify a director name specified in the storage daemon\n"
 "                         configuration file for the Key Encryption Key selection\n"
@@ -195,7 +195,7 @@ int main (int argc, char *argv[])
 
       case 'd':                    /* debug level */
          if (*optarg == 't') {
-            dbg_timestamp = true;
+            debug_timestamp = false;
          } else {
             debug_level = atoi(optarg);
             if (debug_level <= 0) {

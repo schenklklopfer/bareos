@@ -177,7 +177,7 @@ extern DLL_IMP_EXP db_log_insert_func p_db_log_insert;
 class MessagesResource;
 
 extern DLL_IMP_EXP int debug_level;
-extern DLL_IMP_EXP bool dbg_timestamp; /* print timestamp in debug output */
+extern DLL_IMP_EXP bool debug_timestamp; /* don't print timestamp in debug output */
 extern DLL_IMP_EXP bool prt_kaboom;    /* Print kaboom output */
 extern DLL_IMP_EXP int verbose;
 extern DLL_IMP_EXP char my_name[];

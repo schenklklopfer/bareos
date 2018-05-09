@@ -61,7 +61,7 @@ static void usage()
 "       -l          suppress line numbers\n"
 "       -n          print lines that do not match\n"
 "       -d <nn>     set debug level to <nn>\n"
-"       -dt         print timestamp in debug output\n"
+"       -dt         don't print timestamp in debug output\n"
 "       -?          print this message.\n"
 "\n\n");
 
@@ -91,7 +91,7 @@ int main(int argc, char *const *argv)
       switch (ch) {
       case 'd':                       /* set debug level */
          if (*optarg == 't') {
-            dbg_timestamp = true;
+            debug_timestamp = false;
          } else {
             debug_level = atoi(optarg);
             if (debug_level <= 0) {

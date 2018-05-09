@@ -54,7 +54,7 @@ static void usage()
 "Usage: testls [-d debug_level] [-] [pattern1 ...]\n"
 "       -a          print extended attributes (Win32 debug)\n"
 "       -d <nn>     set debug level to <nn>\n"
-"       -dt         print timestamp in debug output\n"
+"       -dt         don't print timestamp in debug output\n"
 "       -e          specify file of exclude patterns\n"
 "       -i          specify file of include patterns\n"
 "       -q          quiet, don't print filenames (debug)\n"
@@ -96,7 +96,7 @@ int main(int argc, char *const *argv)
 
       case 'd':                       /* set debug level */
          if (*optarg == 't') {
-            dbg_timestamp = true;
+            debug_timestamp = false;
          } else {
             debug_level = atoi(optarg);
             if (debug_level <= 0) {

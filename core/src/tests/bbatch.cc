@@ -80,7 +80,7 @@ PROG_COPYRIGHT
 "       -b                with batch mode\n"
 "       -B                without batch mode\n"
 "       -d <nn>           set debug level to <nn>\n"
-"       -dt               print timestamp in debug output\n"
+"       -dt               don't print timestamp in debug output\n"
 "       -D <driver name>  specify the driver database name (default NULL)\n"
 "       -n <name>         specify the database name (default bareos)\n"
 "       -u <user>         specify database user name (default bareos)\n"
@@ -141,7 +141,7 @@ int main (int argc, char *argv[])
 
       case 'd':                    /* debug level */
          if (*optarg == 't') {
-            dbg_timestamp = true;
+            debug_timestamp = false;
          } else {
             debug_level = atoi(optarg);
             if (debug_level <= 0) {

@@ -46,7 +46,7 @@ DLL_IMP_EXP const char *working_directory = NULL; /* working directory path stor
 DLL_IMP_EXP const char *assert_msg = (char *)NULL; /* ASSERT2 error message */
 DLL_IMP_EXP int verbose = 0;                      /* increase User messages */
 DLL_IMP_EXP int debug_level = 0;                  /* debug level */
-DLL_IMP_EXP bool dbg_timestamp = false;           /* print timestamp in debug output */
+DLL_IMP_EXP bool debug_timestamp = true;           /* don't print timestamp in debug output */
 DLL_IMP_EXP bool prt_kaboom = false;              /* Print kaboom output */
 DLL_IMP_EXP utime_t daemon_start_time = 0;        /* Daemon start time */
 DLL_IMP_EXP const char *version = VERSION " (" BDATE ")";
@@ -1234,7 +1234,7 @@ void d_msg(const char *file, int line, int level, const char *fmt,...)
    }
 
    if (level <= debug_level) {
-      if (dbg_timestamp) {
+      if (debug_timestamp) {
          mtime = GetCurrentBtime();
          usecs = mtime % 1000000;
          Mmsg(buf, "%s.%06d ", bstrftimes(ed1, sizeof(ed1), BtimeToUtime(mtime)), usecs);
@@ -1306,9 +1306,9 @@ void SetTimestamp(int timestamp_flag)
    if (timestamp_flag < 0) {
       return;
    } else if (timestamp_flag > 0) {
-      dbg_timestamp = true;
+      debug_timestamp = true;
    } else {
-      dbg_timestamp = false;
+      debug_timestamp = false;
    }
 }
 
@@ -1324,7 +1324,7 @@ bool GetTrace(void)
 
 bool GetTimestamp(void)
 {
-   return dbg_timestamp;
+   return debug_timestamp;
 }
 
 /*
